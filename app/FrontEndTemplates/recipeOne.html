@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-container recipe-one-layout">
+    <!-- Left Column -->
+    <div class="left-column">
+        <img src="{{ url_for('static', filename=left_column_image.split('Static/')[1]) }}" alt="Recipe One Image" class="large-image">
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <h2>Recipe One</h2>
+        <p class="right-column-text">{{ right_column_text }}</p>
+        <div class="audio-player">
+            <h3>Listen to Recipe Instructions</h3>
+            <audio controls>
+                <source src="{{ url_for('static', filename=audio_file.split('Static/')[1]) }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</div>
+{% endblock %}

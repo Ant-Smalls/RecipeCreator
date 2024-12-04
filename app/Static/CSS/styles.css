@@ -1,0 +1,345 @@
+/* General Layout */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+
+/* Centered Header */
+.centered-header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    width: 100%;            /* Full width of the page */
+    height: 100px;          /* Limit the height */
+    text-align: center;     /* Center text within the header */
+    background-color: #f4f4f4; /* Optional background for contrast */
+    position: relative;     /* Keep it above other content */
+    border-bottom: 1px solid #ddd; /* Add a separator line at the bottom */
+}
+
+.header-container {
+    width: 90%;             /* Constrain content width to 90% of the page */
+    max-width: 1200px;      /* Set a maximum width */
+    display: flex;
+    flex-direction: column; /* Stack title and links vertically */
+    align-items: center;    /* Center align horizontally */
+}
+
+.header-container h1 {
+    font-size: 3rem;        /* Adjust title size */
+    font-weight: bold;      /* Make the title bolder */
+    margin: 0;
+    color: #333;
+}
+
+
+
+/* Left Column */
+.left-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.large-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.upload-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+
+.upload-button {
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+/* Right Column */
+.right-column {
+    flex: 1;           /* Flexbox for equal width sharing */
+    height: 80vh;      /* Set taller height */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-left: 1px solid #ddd;
+}
+
+
+.right-column h2 {
+     font-size: 2.5rem; /* Increase font size for the title */
+    font-weight: bold; /* Make the title bold */
+    margin-bottom: 20px; /* Add spacing below the title */
+    text-align: center; /* Center-align the title */
+    color: #333; /* Optional: Ensure the title has a clear color */
+}
+
+.image-box {
+    margin: 10px 0;
+}
+
+.image-box button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-box button:hover {
+    background-color: #218838;
+}
+
+/* Response Box */
+.response-box {
+    margin-bottom: 40px; /* Add space between the response and the image */
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Subtle border for separation */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 2.0rem; /* Adjust font size */
+    color: #333; /* Text color */
+    text-align: center; /* Center-align the text */
+    line-height: 4;
+}
+
+
+
+
+
+/* Specific Layout for Recipe One Page */
+.recipe-one-layout {
+    display: flex;
+    flex-direction: row; /* Left and right columns side by side */
+    height: 100vh;       /* Full viewport height */
+    gap: 20px;           /* Space between the columns */
+    padding: 20px;       /* Padding around the container */
+    background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Left Column Specific Styles */
+.recipe-one-layout .left-column {
+    flex: 1; /* Adjusts width dynamically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Optional border for visual separation */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Image in Left Column */
+.recipe-one-layout .left-column .large-image {
+    max-width: 80%;  /* Limit the image width */
+    max-height: 80%; /* Limit the image height */
+    object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Right Column Specific Styles */
+.recipe-one-layout .right-column {
+    flex: 1; /* Adjusts width dynamically */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Optional border for visual separation */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title in Right Column */
+.recipe-one-layout .right-column h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Text in Right Column */
+.recipe-one-layout .right-column .right-column-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+    color: #555;
+}
+
+/* Audio Player */
+.recipe-one-layout .right-column .audio-player {
+    margin-top: 20px; /* Add space above the audio player */
+}
+
+.recipe-one-layout .right-column .audio-player audio {
+    width: 100%; /* Make the audio player span the column width */
+    max-width: 400px; /* Limit the max width for better usability */
+    margin: 0 auto; /* Center the audio player horizontally */
+    display: block;
+}
+
+
+/* Specific Layout for Recipe Two Page */
+.recipe-two-layout {
+    display: flex;
+    flex-direction: row; /* Left and right columns side by side */
+    height: 100vh;       /* Full viewport height */
+    gap: 20px;           /* Space between the columns */
+    padding: 20px;       /* Padding around the container */
+    background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Left Column Specific Styles */
+.recipe-two-layout .left-column {
+    flex: 1; /* Adjusts width dynamically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Optional border for visual separation */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Image in Left Column */
+.recipe-two-layout .left-column .large-image {
+    max-width: 80%;  /* Limit the image width */
+    max-height: 80%; /* Limit the image height */
+    object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Right Column Specific Styles */
+.recipe-two-layout .right-column {
+    flex: 1; /* Adjusts width dynamically */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Optional border for visual separation */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title in Right Column */
+.recipe-two-layout .right-column h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Text in Right Column */
+.recipe-two-layout .right-column .right-column-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+    color: #555;
+}
+
+
+/* Audio Player */
+.recipe-two-layout .right-column .audio-player {
+    margin-top: 20px; /* Add space above the audio player */
+}
+
+.recipe-two-layout .right-column .audio-player audio {
+    width: 100%; /* Make the audio player span the column width */
+    max-width: 400px; /* Limit the max width for better usability */
+    margin: 0 auto; /* Center the audio player horizontally */
+    display: block;
+}
+
+
+
+/* Specific Layout for Recipe Three Page */
+.recipe-three-layout {
+    display: flex;
+    flex-direction: row; /* Left and right columns side by side */
+    height: 100vh;       /* Full viewport height */
+    gap: 20px;           /* Space between the columns */
+    padding: 20px;       /* Padding around the container */
+    background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Left Column Specific Styles */
+.recipe-three-layout .left-column {
+    flex: 1; /* Adjusts width dynamically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Optional border for visual separation */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Image in Left Column */
+.recipe-three-layout .left-column .large-image {
+    max-width: 80%;  /* Limit the image width */
+    max-height: 80%; /* Limit the image height */
+    object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Right Column Specific Styles */
+.recipe-three-layout .right-column {
+    flex: 1; /* Adjusts width dynamically */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Optional border for visual separation */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title in Right Column */
+.recipe-three-layout .right-column h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Text in Right Column */
+.recipe-three-layout .right-column .right-column-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+    color: #555;
+}
+
+/* Audio Player */
+.recipe-three-layout .right-column .audio-player {
+    margin-top: 20px; /* Add space above the audio player */
+}
+
+.recipe-three-layout .right-column .audio-player audio {
+    width: 100%; /* Make the audio player span the column width */
+    max-width: 400px; /* Limit the max width for better usability */
+    margin: 0 auto; /* Center the audio player horizontally */
+    display: block;
+}
