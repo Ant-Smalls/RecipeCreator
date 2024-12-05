@@ -1,40 +1,76 @@
+/* Updated styles.css */
+/* Primary color: #14353f */
+/* Secondary color: #b02b19 */
+
+/* Add a fade-in animation on page load for a more dynamic feel */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
 /* General Layout */
 .main-container {
     display: flex;
     flex-direction: row;
     height: 100vh;
+    transition: all 0.3s ease;
 }
 
+main {
+    animation: fadeIn 0.8s ease-in-out;
+}
 
-/* Centered Header */
+/* Header */
 .centered-header {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    width: 100%;            /* Full width of the page */
-    height: 100px;          /* Limit the height */
-    text-align: center;     /* Center text within the header */
-    background-color: #f4f4f4; /* Optional background for contrast */
-    position: relative;     /* Keep it above other content */
-    border-bottom: 1px solid #ddd; /* Add a separator line at the bottom */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-color: #14353f; /* Primary color for header */
+    position: relative;
+    border-bottom: 1px solid #0f2a32; /* Slightly darker shade for subtle detail */
 }
 
 .header-container {
-    width: 90%;             /* Constrain content width to 90% of the page */
-    max-width: 1200px;      /* Set a maximum width */
+    width: 90%;
+    max-width: 1200px;
     display: flex;
-    flex-direction: column; /* Stack title and links vertically */
-    align-items: center;    /* Center align horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-container h1 {
-    font-size: 3rem;        /* Adjust title size */
-    font-weight: bold;      /* Make the title bolder */
+    font-size: 3rem;
+    font-weight: bold;
     margin: 0;
-    color: #333;
+    color: #fff; /* White text on primary background */
+    animation: fadeIn 1s ease-in-out;
 }
 
-
+/* Footer */
+footer {
+    background-color: #14353f; /* Primary color for footer */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
 
 /* Left Column */
 .left-column {
@@ -44,12 +80,18 @@
     align-items: center;
     background-color: #f9f9f9;
     position: relative;
+    transition: background-color 0.3s;
 }
 
 .large-image {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.large-image:hover {
+    transform: scale(1.02); /* Slight zoom on hover for a dynamic feel */
 }
 
 .upload-form {
@@ -63,22 +105,23 @@
 .upload-button {
     font-size: 1.5rem;
     padding: 20px 40px;
-    background-color: #007bff;
-    color: white;
+    background-color: #b02b19; /* Secondary color for buttons */
+    color: #fff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .upload-button:hover {
-    background-color: #0056b3;
+    background-color: #14353f; /* Switch to primary on hover */
+    transform: scale(1.05);
 }
 
 /* Right Column */
 .right-column {
-    flex: 1;           /* Flexbox for equal width sharing */
-    height: 80vh;      /* Set taller height */
+    flex: 1;
+    height: 80vh;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -86,15 +129,22 @@
     justify-content: center;
     background-color: #ffffff;
     border-left: 1px solid #ddd;
+    transition: background-color 0.3s;
 }
 
-
 .right-column h2 {
-     font-size: 2.5rem; /* Increase font size for the title */
-    font-weight: bold; /* Make the title bold */
-    margin-bottom: 20px; /* Add spacing below the title */
-    text-align: center; /* Center-align the title */
-    color: #333; /* Optional: Ensure the title has a clear color */
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #14353f; /* Use primary color for headings in main content */
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .image-box {
@@ -104,85 +154,79 @@
 .image-box button {
     font-size: 1.5rem;
     padding: 15px 30px;
-    background-color: #28a745;
-    color: white;
+    background-color: #b02b19; /* Secondary color */
+    color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .image-box button:hover {
-    background-color: #218838;
+    background-color: #14353f; /* Primary on hover */
+    transform: scale(1.05);
 }
 
 /* Response Box */
 .response-box {
-    margin-bottom: 40px; /* Add space between the response and the image */
+    margin-bottom: 40px;
     padding: 40px;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border: 1px solid #ddd; /* Subtle border for separation */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 2.0rem; /* Adjust font size */
-    color: #333; /* Text color */
-    text-align: center; /* Center-align the text */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 2.0rem;
+    color: #333;
+    text-align: center;
     line-height: 4;
+    animation: fadeIn 0.8s ease-in-out;
 }
-
-
-
-
 
 /* Specific Layout for Recipe One Page */
 .recipe-one-layout {
     display: flex;
-    flex-direction: row; /* Left and right columns side by side */
-    height: 100vh;       /* Full viewport height */
-    gap: 20px;           /* Space between the columns */
-    padding: 20px;       /* Padding around the container */
-    background-color: #f9f9f9; /* Optional background color */
+    flex-direction: row;
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Left Column Specific Styles */
 .recipe-one-layout .left-column {
-    flex: 1; /* Adjusts width dynamically */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    border: 1px solid #ddd; /* Optional border for visual separation */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Image in Left Column */
 .recipe-one-layout .left-column .large-image {
-    max-width: 80%;  /* Limit the image width */
-    max-height: 80%; /* Limit the image height */
-    object-fit: contain; /* Preserve aspect ratio */
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
-/* Right Column Specific Styles */
 .recipe-one-layout .right-column {
-    flex: 1; /* Adjusts width dynamically */
+    flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
-    border: 1px solid #ddd; /* Optional border for visual separation */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Title in Right Column */
 .recipe-one-layout .right-column h2 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
+    color: #14353f; /* Primary color for consistency */
 }
 
-/* Text in Right Column */
 .recipe-one-layout .right-column .right-column-text {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -190,69 +234,63 @@
     color: #555;
 }
 
-/* Audio Player */
 .recipe-one-layout .right-column .audio-player {
-    margin-top: 20px; /* Add space above the audio player */
+    margin-top: 20px;
 }
 
 .recipe-one-layout .right-column .audio-player audio {
-    width: 100%; /* Make the audio player span the column width */
-    max-width: 400px; /* Limit the max width for better usability */
-    margin: 0 auto; /* Center the audio player horizontally */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     display: block;
 }
 
-
-/* Specific Layout for Recipe Two Page */
+/* Recipe Two Layout */
 .recipe-two-layout {
     display: flex;
-    flex-direction: row; /* Left and right columns side by side */
-    height: 100vh;       /* Full viewport height */
-    gap: 20px;           /* Space between the columns */
-    padding: 20px;       /* Padding around the container */
-    background-color: #f9f9f9; /* Optional background color */
+    flex-direction: row;
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Left Column Specific Styles */
 .recipe-two-layout .left-column {
-    flex: 1; /* Adjusts width dynamically */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    border: 1px solid #ddd; /* Optional border for visual separation */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Image in Left Column */
 .recipe-two-layout .left-column .large-image {
-    max-width: 80%;  /* Limit the image width */
-    max-height: 80%; /* Limit the image height */
-    object-fit: contain; /* Preserve aspect ratio */
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
-/* Right Column Specific Styles */
 .recipe-two-layout .right-column {
-    flex: 1; /* Adjusts width dynamically */
+    flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
-    border: 1px solid #ddd; /* Optional border for visual separation */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Title in Right Column */
 .recipe-two-layout .right-column h2 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
+    color: #14353f;
 }
 
-/* Text in Right Column */
 .recipe-two-layout .right-column .right-column-text {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -260,71 +298,63 @@
     color: #555;
 }
 
-
-/* Audio Player */
 .recipe-two-layout .right-column .audio-player {
-    margin-top: 20px; /* Add space above the audio player */
+    margin-top: 20px;
 }
 
 .recipe-two-layout .right-column .audio-player audio {
-    width: 100%; /* Make the audio player span the column width */
-    max-width: 400px; /* Limit the max width for better usability */
-    margin: 0 auto; /* Center the audio player horizontally */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     display: block;
 }
 
-
-
-/* Specific Layout for Recipe Three Page */
+/* Recipe Three Layout */
 .recipe-three-layout {
     display: flex;
-    flex-direction: row; /* Left and right columns side by side */
-    height: 100vh;       /* Full viewport height */
-    gap: 20px;           /* Space between the columns */
-    padding: 20px;       /* Padding around the container */
-    background-color: #f9f9f9; /* Optional background color */
+    flex-direction: row;
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Left Column Specific Styles */
 .recipe-three-layout .left-column {
-    flex: 1; /* Adjusts width dynamically */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    border: 1px solid #ddd; /* Optional border for visual separation */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Image in Left Column */
 .recipe-three-layout .left-column .large-image {
-    max-width: 80%;  /* Limit the image width */
-    max-height: 80%; /* Limit the image height */
-    object-fit: contain; /* Preserve aspect ratio */
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
-/* Right Column Specific Styles */
 .recipe-three-layout .right-column {
-    flex: 1; /* Adjusts width dynamically */
+    flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
-    border: 1px solid #ddd; /* Optional border for visual separation */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Title in Right Column */
 .recipe-three-layout .right-column h2 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
+    color: #14353f;
 }
 
-/* Text in Right Column */
 .recipe-three-layout .right-column .right-column-text {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -332,14 +362,13 @@
     color: #555;
 }
 
-/* Audio Player */
 .recipe-three-layout .right-column .audio-player {
-    margin-top: 20px; /* Add space above the audio player */
+    margin-top: 20px;
 }
 
 .recipe-three-layout .right-column .audio-player audio {
-    width: 100%; /* Make the audio player span the column width */
-    max-width: 400px; /* Limit the max width for better usability */
-    margin: 0 auto; /* Center the audio player horizontally */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     display: block;
 }

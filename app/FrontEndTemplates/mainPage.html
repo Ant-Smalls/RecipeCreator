@@ -6,12 +6,12 @@
             {% if uploaded_image %}
                 {% if response_message %}
                     <div class="response-box">
-                        <p> The ingredient is {{ response_message }}!</p>
+                        <p>The ingredient is {{ response_message }}!</p>
                     </div>
                 {% endif %}
                 <img src="{{ url_for('static', filename=uploaded_image) }}" alt="Uploaded Image" class="large-image">
             {% else %}
-                <form action="/" method="POST" enctype="multipart/form-data" id="uploadForm">
+                <form action="/" method="POST" enctype="multipart/form-data" id="uploadForm" class="upload-form">
                     <button type="button" class="upload-button" onclick="document.getElementById('fileInput').click();">
                         Upload Image
                     </button>
@@ -31,17 +31,16 @@
         <div class="right-column">
             <h2>Select a Recipe</h2>
             <div class="images">
-                    <div class="image-box">
-                        <button onclick="location.href= '/RecipeCreator/recipeOne'">Recipe One</button>
-                    </div>
-                    <div class="image-box">
-                        <button onclick="location.href='/RecipeCreator/recipeTwo'">Recipe Two</button>
-                    </div>
-                    <div class="image-box">
-                        <button onclick="location.href='/RecipeCreator/recipeThree'">Recipe Three</button>
-                    </div>
+                <div class="image-box">
+                    <button onclick="location.href='/RecipeCreator/recipeOne'">Recipe One</button>
+                </div>
+                <div class="image-box">
+                    <button onclick="location.href='/RecipeCreator/recipeTwo'">Recipe Two</button>
+                </div>
+                <div class="image-box">
+                    <button onclick="location.href='/RecipeCreator/recipeThree'">Recipe Three</button>
+                </div>
             </div>
         </div>
     </div>
 {% endblock %}
-
